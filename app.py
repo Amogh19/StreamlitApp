@@ -9,7 +9,7 @@ st.set_page_config(page_title="NFHS Dashboard", layout="wide")
 @st.cache_data
 def load_data():
     # Load the specific CSV you uploaded
-    df = pd.read_csv("All India National Family Health Survey.xlsx - in.csv")
+    df = pd.read_csv("All India National Family Health Survey.xlsx")
     
     # Cleaning: The sample shows 'NA' values and some empty columns
     df = df.replace('NA', pd.NA)
@@ -82,4 +82,5 @@ with c2:
 with st.expander("View Filtered Dataset"):
 
     st.write(filtered_df[['STATE', 'nfhs', selected_indicator]])
+
 
