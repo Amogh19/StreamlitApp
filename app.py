@@ -1,16 +1,3 @@
-import subprocess
-import sys
-
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# List of libraries for your NFHS dashboard
-libraries = ["streamlit", "pandas", "plotly", "openpyxl"]
-
-for lib in libraries:
-    install(lib)
-
-print("All libraries installed successfully!")
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -95,3 +82,4 @@ with c2:
 with st.expander("View Filtered Dataset"):
 
     st.write(filtered_df[['STATE', 'nfhs', selected_indicator]])
+
